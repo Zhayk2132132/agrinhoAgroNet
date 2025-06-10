@@ -1,0 +1,345 @@
+ :root {
+  /* paleta de cores para o site */
+   --verde: #4CAF50;
+   --azul: #2196F3;
+   --laranja: #FF9800;
+   --marrom: #795548;
+   --amarelo: #FFEB3B;
+   --cinza-claro: #f4f4f4;
+ }
+
+ * {
+   box-sizing: border-box;
+ }
+
+ body {
+   margin: 0;
+   font-family: Arial, sans-serif;
+   background-color: var(--cinza-claro);
+   scroll-behavior: smooth;
+ }
+
+ header {
+   background-color: var(--verde);
+   color: white;
+   padding: 1rem;
+   position: fixed;
+   width: 100%;
+   top: 0;
+   z-index: 1000;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-wrap: wrap;
+ }
+
+ nav {
+   display: flex;
+   gap: 1rem;
+   flex-wrap: wrap;
+ }
+
+ nav a {
+   color: white;
+   text-decoration: none;
+   font-weight: bold;
+   position: relative;
+   padding: 0.5rem;
+ }
+
+ /* Animação de barrinha laranja ao passar o mouse */
+ nav a::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 0%;
+   height: 3px;
+   background-color: var(--laranja);
+   transition: width 0.3s ease;
+ }
+
+ nav a:hover::after {
+   width: 100%;
+ }
+
+ .logo {
+   height: 60px;
+   margin-top: 0.5rem;
+ }
+
+ .spacer {
+   height: 80px;
+ }
+
+ section {
+   padding: 3rem 2rem;
+   animation: fadeInUp 1s ease both;
+ }
+
+ @keyframes fadeInUp {
+   from {
+     opacity: 0;
+     transform: translateY(30px);
+   }
+
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+
+ h1,
+ h2 {
+   color: var(--marrom);
+ }
+
+ p {
+   max-width: 800px;
+   margin: 1rem auto;
+   line-height: 1.6;
+ }
+
+ .carousel {
+   display: flex;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+   gap: 1rem;
+ }
+
+ .carousel img {
+   height: 300px;
+   flex: none;
+   scroll-snap-align: start;
+   border-radius: 10px;
+   transition: transform 0.3s ease;
+ }
+
+ .carousel img:hover {
+   transform: scale(1.05);
+ }
+
+ .grafico {
+   max-width: 800px;
+   margin: 2rem auto;
+ }
+
+ .barra {
+   background-color: var(--azul);
+   color: white;
+   margin: 1rem 0;
+   padding: 0.5rem;
+   border-radius: 5px;
+ }
+
+ .barra span {
+   display: inline-block;
+   height: 24px;
+   background-color: var(--laranja);
+   border-radius: 5px;
+   text-align: right;
+   padding-right: 1rem;
+   line-height: 24px;
+ }
+
+ .imagem-full {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   object-position: center 90%;
+   display: block;
+   border-radius: 0 0 10px 10px;
+ }
+
+ .conteudo-imagem {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
+   align-items: center;
+   justify-content: center;
+ }
+
+ .conteudo-imagem img {
+   max-width: 400px;
+   width: 100%;
+   border-radius: 10px;
+ }
+
+ footer {
+   background-color: var(--marrom);
+   color: white;
+   text-align: center;
+   padding: 1rem;
+ }
+
+ /* Responsividade */
+ @media (max-width: 768px) {
+   nav {
+     flex-direction: column;
+     align-items: flex-start;
+   }
+
+   .conteudo-imagem {
+     flex-direction: column;
+   }
+
+   .logo {
+     margin-top: 1rem;
+   }
+ }
+
+ #mapa {
+   padding: 3rem 2rem;
+   text-align: center;
+ }
+
+ /* zoom das imagens do carrossel */
+ .zoom {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.85);
+   display: none;
+   align-items: flex-start;
+   /* Alinha no topo com espaço */
+   justify-content: center;
+   z-index: 3000;
+   padding: 6rem 2rem 2rem;
+   /* empurra o conteúdo para baixo */
+ }
+
+ .zoom img {
+   max-width: 90%;
+   max-height: 80vh;
+   border-radius: 10px;
+   box-shadow: 0 0 20px black;
+ }
+
+ .zoom:target {
+   display: flex;
+ }
+
+ .zoom .close {
+   position: absolute;
+   top: 1.5rem;
+   /* já compensa a barra fixa */
+   right: 2rem;
+   font-size: 2rem;
+   text-decoration: none;
+   color: white;
+   background: var(--laranja);
+   padding: 0.3rem 0.6rem;
+   border-radius: 8px;
+   z-index: 3100;
+   transition: background 0.3s;
+ }
+
+ .zoom .close:hover {
+   background: #e65100;
+ }
+
+ .mapa-container {
+   position: relative;
+   max-width: 700px;
+   margin: 40px auto;
+   border: 2px solid #ccc;
+   border-radius: 10px;
+   overflow: visible;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .mapa-container img {
+   width: 100%;
+   height: auto;
+   display: block;
+ }
+
+ .regiao {
+   position: absolute;
+   cursor: pointer;
+ }
+
+ .tooltip {
+   display: none;
+   position: absolute;
+   background-color: #ffffffdd;
+   border: 1px solid #ccc;
+   padding: 8px;
+   border-radius: 8px;
+   font-size: 13px;
+   width: 180px;
+   z-index: 10;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   top: -10px;
+   left: 100%;
+   transform: translateX(10px);
+ }
+
+ .regiao:hover .tooltip {
+   display: block;
+ }
+
+ /* Marcação do tooltip */
+ .regiao {
+   background-color: rgba(255, 140, 0, 0.2);
+   border-radius: 40px;
+ }
+
+ /* Áreas aproximadas de cada região no mapa  */
+ .noroeste {
+   top: 30%;
+   left: 22%;
+   width: 10%;
+   height: 8%;
+ }
+
+ .norte {
+   top: 25%;
+   left: 52%;
+   width: 10%;
+   height: 8%;
+ }
+
+ .campos {
+   top: 42%;
+   left: 56%;
+   width: 12%;
+   height: 8%;
+ }
+
+ .grande-curitiba {
+   top: 65%;
+   left: 75%;
+   width: 10%;
+   height: 8%;
+ }
+
+ .litoral {
+   top: 65%;
+   left: 85%;
+   width: 10%;
+   height: 8%;
+ }
+
+ .centro {
+   top: 60%;
+   left: 42%;
+   width: 16%;
+   height: 10%;
+ }
+
+ .oeste {
+   top: 50%;
+   left: 12%;
+   width: 12%;
+   height: 10%;
+ }
+
+ .sudoeste {
+   top: 75%;
+   left: 22%;
+   width: 15%;
+   height: 10%;
+ }

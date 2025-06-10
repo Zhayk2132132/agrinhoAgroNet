@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroNet - Conexão Campo e Cidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+        <!-- menu de navegação principal fixo -->
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#importancia">Importância do Agro</a>
+            <a href="#distribuicao">Distribuição nas Cidades</a>
+            <a href="#carrossel">Imagens</a>
+            <a href="#graficos">Dados do Paraná</a>
+        </nav>
+        <img src="imagens/logo.png" alt="Logo AgroNet" class="logo">
+    </header>
+
+    <div class="spacer"></div>
+
+    <!-- seção inicial de boas vindas -->
+
+    <section id="inicio">
+        <img src="imagens/por-do-sol.png" alt="Pôr do sol no campo" class="imagem-full">
+        <h1>AgroNet - Conexão Campo e Cidade</h1>
+        <p>Seja bem-vindo ao AgroNet! O seu portal de notícias da agropecuária de Santo Antônio da Platina e região.
+            Aqui você acompanha como o agro conecta o campo à cidade, garantindo alimentos de qualidade e movimentando a
+            economia do Paraná.</p>
+    </section>
+
+    <!-- seção onde fala da importância do agro com imagem da pessoa do campo e da cidade -->
+
+    <section id="importancia">
+        <h2>Importância do Agro na Produção de Alimentos</h2>
+        <div class="conteudo-imagem">
+            <p>O agronegócio é fundamental para a segurança alimentar do país. No Paraná, o campo produz uma enorme
+                variedade de alimentos que abastecem as cidades diariamente, como grãos, hortaliças, leite, carnes e
+                muito mais.</p>
+            <img src="imagens/importancia-agro.png" alt="Produção agrícola" />
+        </div>
+    </section>
+    <br>
+    <br>
+    <section id="distribuicao">
+        <h2>Como os Alimentos Chegam às Cidades</h2>
+        <div class="conteudo-imagem">
+            <p>A produção agrícola e pecuária passa por uma complexa cadeia logística até chegar às prateleiras dos
+                supermercados. Cooperativas, transportadoras e centros de distribuição atuam para garantir que tudo
+                chegue com qualidade ao consumidor.</p>
+            <img src="imagens/distribuicao.png" alt="Distribuição de alimentos" />
+        </div>
+    </section>
+    <br>
+    <br>
+    <!-- carrossel de imagens feita com HTML e CSS-->
+
+    <section id="carrossel">
+        <h2>Imagens do Campo ao Consumidor</h2>
+        <div id="carrossel" class="carousel">
+            <a href="#img1"><img src="imagens/img1.png" alt="Plantação de soja"></a>
+            <a href="#img2"><img src="imagens/img2.png" alt="Transporte de alimentos"></a>
+            <a href="#img3"><img src="imagens/img3.png" alt="Produtos no mercado"></a>
+            <a href="#img4"><img src="imagens/img4.png" alt="Produtos da feira"></a>
+            <a href="#img5"><img src="imagens/img5.png" alt="Gado Nelore Paranaense"></a>
+        </div>
+
+        <!-- Zoom em tela cheia -->
+
+        <div class="zoom" id="img1">
+            <a href="#carrossel" class="close">×</a>
+            <img src="imagens/img1.png" alt="Plantação de soja">
+        </div>
+        <div class="zoom" id="img2">
+            <a href="#carrossel" class="close">×</a>
+            <img src="imagens/img2.png" alt="Transporte de alimentos">
+        </div>
+        <div class="zoom" id="img3">
+            <a href="#carrossel" class="close">×</a>
+            <img src="imagens/img3.png" alt="Produtos no mercado">
+        </div>
+        <div class="zoom" id="img4">
+            <a href="#carrossel" class="close">×</a>
+            <img src="imagens/img4.png" alt="Produtos da feira">
+        </div>
+        <div class="zoom" id="img5">
+            <a href="#carrossel" class="close">×</a>
+            <img src="imagens/img5.png" alt="Gado Nelore Paranaense">
+        </div>
+    </section>
+    <br>
+    <br>
+    <!-- seção onde demonstra gráficos em css-->
+
+    <section id="graficos">
+        <h2>Produção e Exportação no Paraná</h2>
+
+        <h3>Produção de Soja (Milhões de toneladas)</h3>
+        <div class="grafico">
+            <div class="barra">2022: <span style="width: 80%">20</span></div>
+            <div class="barra">2023: <span style="width: 90%">22</span></div>
+            <div class="barra">2024: <span style="width: 100%">25</span></div>
+        </div>
+
+        <h3>Exportação de Carnes 2024 (Milhares de toneladas)</h3>
+        <div class="grafico">
+            <div class="barra">Frango: <span style="width: 85%">850</span></div>
+            <div class="barra">Bovino: <span style="width: 65%">650</span></div>
+            <div class="barra">Suíno: <span style="width: 75%">750</span></div>
+        </div>
+    </section>
+
+    <!-- mapa interativo do Paraná -->
+
+    <section id="mapa">
+        <h2>Regiões Produtivas do Paraná</h2>
+        <div class="mapa-container">
+            <img src="imagens/mapa-parana.png" alt="Mapa do Paraná">
+
+            <div class="regiao noroeste">
+                <div class="tooltip">
+                    <strong>Noroeste</strong><br>
+                    Produção agrícola voltada para grãos como milho e soja.
+                </div>
+            </div>
+
+            <div class="regiao norte">
+                <div class="tooltip">
+                    <strong>Norte</strong><br>
+                    Região forte na agroindústria e exportação de carnes.
+                </div>
+            </div>
+
+            <div class="regiao campos">
+                <div class="tooltip">
+                    <strong>Campos Gerais</strong><br>
+                    Destaque na produção de leite, batata e florestas plantadas.
+                </div>
+            </div>
+
+            <div class="regiao grande-curitiba">
+                <div class="tooltip">
+                    <strong>Grande Curitiba</strong><br>
+                    Conexão entre produção rural e mercado urbano.
+                </div>
+            </div>
+
+            <div class="regiao litoral">
+                <div class="tooltip">
+                    <strong>Litoral</strong><br>
+                    Porto de Paranaguá: escoamento de exportações agrícolas.
+                </div>
+            </div>
+
+            <div class="regiao centro">
+                <div class="tooltip">
+                    <strong>Centro e Centro-Sul</strong><br>
+                    Cooperativas e produção diversificada, com destaque para grãos.
+                </div>
+            </div>
+
+            <div class="regiao oeste">
+                <div class="tooltip">
+                    <strong>Oeste</strong><br>
+                    Região com forte atuação de agroindústrias e integração lavoura-pecuária.
+                </div>
+            </div>
+
+            <div class="regiao sudoeste">
+                <div class="tooltip">
+                    <strong>Sudoeste</strong><br>
+                    Agricultura familiar e produção de leite e grãos.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- rodapé da página -->
+
+    <footer>
+        <p>AgroNet &copy; 2025 - Conectando o Campo à Cidade </p>
+        <p> Aluno Kayk Cruz Fernandes</p>
+    </footer>
+</body>
