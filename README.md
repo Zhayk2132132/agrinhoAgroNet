@@ -24,6 +24,8 @@ Criei um menu de navegação com cinco itens, o menu é verde com uma animação
 Também criei um carrossel de imagens, que ao clicar na imagem ela é ampliada e destacada ao centro, um botão laranja aparece ao lado direito superior para fechar a imagem.
 O que deu mais trabalho foi montar sobre o mapa do Paraná uma tooltip para cada região e fazer em CSS a estilização e fazer ela aparecer somente quando passar o mouse sobre uma região específica.
 E por fim o rodapé da página (footer) com o slogan e meu nome.
+A Licença utilizada é a MIT
+Muito obrigado!
 
 
 
